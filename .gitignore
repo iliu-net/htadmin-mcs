@@ -1,0 +1,5 @@
+.vagrant/
+.buildpath
+.project
+.settings/
+sites/html/index.html
