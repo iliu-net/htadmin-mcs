@@ -16,13 +16,13 @@ class htpasswd {
 	function getmsg() {
 		return $this->msg;
 	}
-	function htpasswd($configpath) {
+	function __construct($configpath) {
 		$path = realpath ( $configpath );
 		$htpasswdfile = $path . "/" . self::HTPASSWD_NAME;
 
 		$this->filename = $htpasswdfile;
 		$this->msg = '';
-		$this->fp = @fopen($htpasswdfile, 'c+');
+		$this->fp = fopen($htpasswdfile, 'c+');
 		if (!$this->fp) {
 		  $this->msg .= 'CONFIG PATH: '.$configpath.PHP_EOL;
 		  $ec = error_get_last();
